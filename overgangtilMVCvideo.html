@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="group">
+        <div>Hei jeg heter</div>
+        <div id="namediv">--her kommer det et navn</div>
+    </div>
+    <div class="group">
+        <div>Jeg bor i</div>
+        <div id="placediv">..her kommer et sted</div>
+    </div>
+    <div>
+        <div>Min favorittmat er</div>
+        <div id="fooddiv">..her kommer en matrett</div>
+    </div>
+    <button onclick="setFields()">Klikk her for å sette verdier</button>
+    <input type="text" onchange="setName(this.value)">
+    <input type="text" onchange="setPlace(this.value)">
+    <input type="text" onchange="setFood(this.value)">
+    <script> //Modell
+        let name = "Marie";
+        let place = "Tønsberg";
+        let food = "Pizza";
+
+        //view
+        function setFields(){
+            document.getElementById("namediv").innerHTML = name;
+            document.getElementById("placediv").innerHTML = place;
+            document.getElementById("fooddiv").innerHTML = food;
+        }
+
+        //controller - styrer endring av modellen
+        function setName(nameInput){
+            name = nameInput;
+            setFields();
+        }
+        function setPlace(placeInput){
+            place = placeInput;
+            setFields();
+        }
+        function setFood(foodInput){
+            food = foodInput;
+            setFields();
+        }
+    </script>
+</body>
+</html>
